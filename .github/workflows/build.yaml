@@ -1,0 +1,16 @@
+name: build
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: | 
+          echo "${{ secrets.dockerhub_token }}" | docker login -u yunarta --password-stdin 
+          docker build . -f Containerfile -t yunarta/azure-action-container
+          docker push yunarta/azure-action-container
