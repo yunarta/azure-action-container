@@ -35,6 +35,6 @@ RUN export DEBIAN_FRONTEND="noninteractive"\
 
 RUN python3 -m venv /venv \
     && . /venv/bin/activate \
-    && pip install azure-identity azure-mgmt-resource jinja2
+    && pip install azure-identity azure-mgmt-resource jinja2 pyyaml
 
 SHELL [ "/bin/bash", "-lc" ]
