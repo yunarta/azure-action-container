@@ -37,4 +37,6 @@ RUN python3 -m venv /venv \
     && . /venv/bin/activate \
     && pip install azure-identity azure-mgmt-resource jinja2 pyyaml
 
+RUN az bicep install
+
 SHELL [ "/bin/bash", "-lc" ]
